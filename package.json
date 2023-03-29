@@ -1,0 +1,11 @@
+{
+  "name": "todo-list-assignment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"(cd backend && yarn dev)\"  \"(cd frontend && yarn dev)\" \"(cd json-server && yarn start)\""
+  },
+  "repository": "https://github.com/jirasin02/todo-list-assignment.git",
+  "author": "Jirasin <jjrsinx@gmail.com>",
+  "license": "MIT"
+}
