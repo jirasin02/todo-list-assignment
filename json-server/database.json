@@ -1,16 +1,46 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "json-server",
-      "description": "typicode",
-      "isCompleted": false
-    },
-    {
-      "title": "Boy",
-      "description": "Hello_World_Tour",
+      "title": "This is a todo list",
+      "description": "Hello, welcome to my todo list website! Nice to meet you :)",
       "isCompleted": false,
       "id": 2
+    },
+    {
+      "title": "Test todo",
+      "description": "Hello world!",
+      "isCompleted": true,
+      "id": 3
+    },
+    {
+      "title": "Presentation tmr",
+      "description": "Final project presentation at university!",
+      "isCompleted": true,
+      "id": 6
+    },
+    {
+      "title": "Send the website link in email",
+      "description": "On 8th April",
+      "isCompleted": false,
+      "id": 7
+    },
+    {
+      "title": "This is a simple todo list",
+      "description": "",
+      "isCompleted": false,
+      "id": 8
+    },
+    {
+      "title": "This is very clean and neat!",
+      "description": "- You can check out my github ---> jirasin02 🙂",
+      "isCompleted": false,
+      "id": 9
+    },
+    {
+      "title": "Try adding emoji to the web 😅",
+      "description": "",
+      "isCompleted": false,
+      "id": 10
     }
   ]
 }

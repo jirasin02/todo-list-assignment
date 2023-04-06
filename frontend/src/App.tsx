@@ -1,4 +1,6 @@
+import { createTheme, ThemeProvider } from "@mui/material";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import TodoPage from "./pages/Todo";
 
 const router = createBrowserRouter([
@@ -10,10 +12,18 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <RouterProvider router={router} />
+      </div>
+    </ThemeProvider>
   );
 }
+
+const theme = createTheme({
+  typography: {
+    fontFamily: `"Raleway", sans-serif`,
+  },
+});
 
 export default App;
