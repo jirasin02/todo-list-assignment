@@ -11,6 +11,7 @@
       "title": "Test todo",
       "description": "Hello world!",
       "isCompleted": true,
+      "date": "2023-04-07T16:54:28.665Z",
       "id": 3
     },
     {
@@ -22,15 +23,16 @@
     },
     {
       "title": "This is a simple todo list",
-      "description": "",
+      "description": "Latest update for real",
       "isCompleted": false,
-      "date": "2023-04-03T09:38:39.034Z",
+      "date": "2023-04-07T16:55:54.565Z",
       "id": 8
     },
     {
       "title": "This is very clean and neat!",
       "description": "- You can check out my github ---> jirasin02 🙂",
       "isCompleted": false,
+      "date": "2023-04-07T16:54:53.164Z",
       "id": 9
     },
     {
@@ -43,7 +45,7 @@
     {
       "title": "Try adding date",
       "description": ":)",
-      "isCompleted": false,
+      "isCompleted": true,
       "date": "2023-03-07T09:38:39.034Z",
       "id": 11
     },

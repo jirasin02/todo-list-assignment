@@ -1,38 +1,20 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { Request, Response } from "express";
 import { Todo } from "../types/todo";
+import { sortByDate, sortByStatus, sortByTitle } from "../utils/sortBy";
 
 export const getTodos = async (req: Request, res: Response) => {
   const todos = await axios.get("http://localhost:3000/todos");
   let sortedTodos = todos.data;
   switch (req.query.sortBy) {
     case "title":
-      sortedTodos = todos.data.sort((a: Todo, b: Todo) => {
-        if (a.title < b.title) {
-          return -1;
-        }
-        if (a.title > b.title) {
-          return 1;
-        }
-        return 0;
-      });
+      sortedTodos = sortByTitle(todos.data);
       break;
     case "status":
-      sortedTodos = todos.data.filter((todo: Todo) => todo.isCompleted);
-      sortedTodos = sortedTodos.concat(
-        todos.data.filter((todo: Todo) => !todo.isCompleted)
-      );
+      sortedTodos = sortByStatus(todos.data);
       break;
     case "date":
-      sortedTodos = todos.data.sort((a: Todo, b: Todo) => {
-        if (a.date < b.date) {
-          return -1;
-        }
-        if (a.date > b.date) {
-          return 1;
-        }
-        return 0;
-      });
+      sortedTodos = sortByDate(todos.data);
       break;
     default:
       break;
