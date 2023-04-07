@@ -1,7 +1,6 @@
-import React from "react";
-import axios from "axios";
+import React, { forwardRef } from "react";
 import { Box, IconButton } from "@mui/material";
-import { AddTodo, Todo } from "@/types/todo";
+import { Todo } from "@/types/todo";
 import { CheckOutlined, CircleOutlined, MoreVert } from "@mui/icons-material";
 import TodoModal from "./TodoModal";
 
@@ -14,21 +13,22 @@ type TodoItemProps = {
     description: string,
     isCompleted: boolean
   ) => void;
+  handleChangeTodoState: (todo: Todo) => void;
 };
 
 const TodoItem: React.FC<TodoItemProps> = ({
   todo,
   handleDeleteTodo,
   handleEditTodo,
+  handleChangeTodoState,
 }) => {
-  const [isCompleted, setIsCompleted] = React.useState(todo.isCompleted);
-
   const [open, setOpen] = React.useState(false);
   const [editTodo, setEditTodo] = React.useState<Todo>({
     id: todo.id,
     title: todo.title,
     description: todo.description,
     isCompleted: todo.isCompleted,
+    date: todo.date,
   });
 
   const handleOpen = () => {
@@ -37,31 +37,23 @@ const TodoItem: React.FC<TodoItemProps> = ({
       title: todo.title,
       description: todo.description,
       isCompleted: todo.isCompleted,
+      date: todo.date,
     });
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
 
-  const handleChange = (isCompleted: boolean) => {
-    axios.put(`/api/todo/${todo.id}`, {
-      title: todo.title,
-      description: todo.description,
-      isCompleted: isCompleted,
-    });
-    setIsCompleted(isCompleted);
-  };
-
   return (
     <div>
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        {isCompleted ? (
+        {todo.isCompleted ? (
           <IconButton
             sx={{
               color: "#b5b5ba",
               mr: 0.5,
             }}
             disableRipple
-            onClick={() => handleChange(!isCompleted)}
+            onClick={() => handleChangeTodoState(todo)}
           >
             <CheckOutlined />
           </IconButton>
@@ -72,7 +64,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
               mr: 0.5,
             }}
             disableRipple
-            onClick={() => handleChange(!isCompleted)}
+            onClick={() => handleChangeTodoState(todo)}
           >
             <CircleOutlined />
           </IconButton>
@@ -88,8 +80,8 @@ const TodoItem: React.FC<TodoItemProps> = ({
         >
           <Box
             sx={{
-              color: isCompleted ? "#b5b5ba" : "black",
-              textDecoration: isCompleted ? "line-through" : "none",
+              color: todo.isCompleted ? "#b5b5ba" : "black",
+              textDecoration: todo.isCompleted ? "line-through" : "none",
             }}
           >
             {todo.title}

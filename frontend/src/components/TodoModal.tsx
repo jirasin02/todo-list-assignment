@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Modal, Box, TextField, Button } from "@mui/material";
-import { AddTodo, Todo } from "@/types/todo";
+import { Todo } from "@/types/todo";
 
 type TodoModalProps = {
   todo: Todo;

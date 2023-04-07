@@ -4,8 +4,40 @@ import { Todo } from "../types/todo";
 
 export const getTodos = async (req: Request, res: Response) => {
   const todos = await axios.get("http://localhost:3000/todos");
-
-  res.send(todos.data);
+  let sortedTodos = todos.data;
+  switch (req.query.sortBy) {
+    case "title":
+      sortedTodos = todos.data.sort((a: Todo, b: Todo) => {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      });
+      break;
+    case "status":
+      sortedTodos = todos.data.filter((todo: Todo) => todo.isCompleted);
+      sortedTodos = sortedTodos.concat(
+        todos.data.filter((todo: Todo) => !todo.isCompleted)
+      );
+      break;
+    case "date":
+      sortedTodos = todos.data.sort((a: Todo, b: Todo) => {
+        if (a.date < b.date) {
+          return -1;
+        }
+        if (a.date > b.date) {
+          return 1;
+        }
+        return 0;
+      });
+      break;
+    default:
+      break;
+  }
+  res.send(sortedTodos);
 };
 
 export const getTodo = async (req: Request, res: Response) => {

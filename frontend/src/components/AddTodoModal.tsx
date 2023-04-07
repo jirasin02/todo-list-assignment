@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Modal, Box, TextField, Button } from "@mui/material";
-import { AddTodo, Todo } from "@/types/todo";
+import { AddTodo } from "@/types/todo";
 
 type AddTodoModalProps = {
   open: boolean;

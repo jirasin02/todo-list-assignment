@@ -1,9 +1,10 @@
 {
   "todos": [
     {
-      "title": "This is a todo list",
+      "title": "This is a todo list :)",
       "description": "Hello, welcome to my todo list website! Nice to meet you :)",
-      "isCompleted": false,
+      "isCompleted": true,
+      "date": "2023-04-07T15:49:54.457Z",
       "id": 2
     },
     {
@@ -13,21 +14,17 @@
       "id": 3
     },
     {
-      "title": "Presentation tmr",
-      "description": "Final project presentation at university!",
-      "isCompleted": true,
-      "id": 6
-    },
-    {
       "title": "Send the website link in email",
       "description": "On 8th April",
-      "isCompleted": false,
+      "isCompleted": true,
+      "date": "2023-04-07T09:38:39.034Z",
       "id": 7
     },
     {
       "title": "This is a simple todo list",
       "description": "",
       "isCompleted": false,
+      "date": "2023-04-03T09:38:39.034Z",
       "id": 8
     },
     {
@@ -40,7 +37,22 @@
       "title": "Try adding emoji to the web 😅",
       "description": "",
       "isCompleted": false,
+      "date": "2023-04-07T09:38:39.034Z",
       "id": 10
+    },
+    {
+      "title": "Try adding date",
+      "description": ":)",
+      "isCompleted": false,
+      "date": "2023-03-07T09:38:39.034Z",
+      "id": 11
+    },
+    {
+      "title": "Add new todo list",
+      "description": "Try adding list into this todo list website.",
+      "isCompleted": false,
+      "date": "2023-04-07T15:50:44.449Z",
+      "id": 12
     }
   ]
 }

@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"(cd backend && yarn dev)\"  \"(cd frontend && yarn dev)\" \"(cd json-server && yarn start)\""
+    "dev": "concurrently \"(cd backend && npm run dev)\"  \"(cd frontend && npm run dev)\" \"(cd json-server && npm run start)\""
   },
   "repository": "https://github.com/jirasin02/todo-list-assignment.git",
   "author": "Jirasin <jjrsinx@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  }
 }
