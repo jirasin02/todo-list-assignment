@@ -30,7 +30,7 @@ npm i
 3. run frontend, backend, and database in parallel at root folder
 
 ```
-yarn dev
+npm run dev
 ```
 
 4. For backend and frontend test
