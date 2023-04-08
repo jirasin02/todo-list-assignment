@@ -1,10 +1,10 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import { Box, IconButton } from "@mui/material";
 import { Todo } from "@/types/todo";
 import { CheckOutlined, CircleOutlined, MoreVert } from "@mui/icons-material";
 import TodoModal from "./TodoModal";
 
-type TodoItemProps = {
+export type TodoItemProps = {
   todo: Todo;
   handleDeleteTodo: (id: number) => void;
   handleEditTodo: (
@@ -48,6 +48,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
       <Box sx={{ display: "flex", alignItems: "center" }}>
         {todo.isCompleted ? (
           <IconButton
+            id="todo-checked"
             sx={{
               color: "#b5b5ba",
               mr: 0.5,
@@ -59,6 +60,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
           </IconButton>
         ) : (
           <IconButton
+            id="todo-unchecked"
             sx={{
               color: "#210062",
               mr: 0.5,
@@ -78,14 +80,15 @@ const TodoItem: React.FC<TodoItemProps> = ({
             justifyContent: "space-between",
           }}
         >
-          <Box
-            sx={{
+          <div
+            id="todo-title"
+            style={{
               color: todo.isCompleted ? "#b5b5ba" : "black",
               textDecoration: todo.isCompleted ? "line-through" : "none",
             }}
           >
             {todo.title}
-          </Box>
+          </div>
           <IconButton
             sx={{
               color: "#210062",

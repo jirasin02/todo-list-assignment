@@ -16,10 +16,12 @@ npm i
 cd frontend
 npm i
 ```
+
 ```
 cd backend
 npm i
 ```
+
 ```
 cd json-server
 npm i
@@ -29,4 +31,10 @@ npm i
 
 ```
 yarn dev
+```
+
+4. For backend and frontend test
+
+```
+npm test
 ```

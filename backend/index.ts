@@ -2,7 +2,7 @@ import express, { Application } from "express";
 import { router } from "./routes";
 
 const app: Application = express();
-const port = 8080;
+const port = 5050;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
